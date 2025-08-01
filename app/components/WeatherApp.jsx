@@ -136,7 +136,8 @@ const WeatherApp = () => {
     }
   }
 
-  const getCityAndSearch = () => {
+  const getCityAndSearch = (e) => {
+    e.preventDefault();
     const city = document.getElementById('city');
     if (city.value === '') {
       setShowError(true);
@@ -144,16 +145,11 @@ const WeatherApp = () => {
       setTimeout(() => {
         city.style.borderColor = 'transparent'
         setShowError(false)
-      },2000)
+      }, 2000)
       return 0;
     }
     search(city);
   }
-
-  useEffect(() => {
-    search('Mazar-e-Sharif');
-  }, [])
-
 
   const [background, setBackground] = useState('13d.jpg')
 
@@ -165,7 +161,7 @@ const WeatherApp = () => {
     }
   }, [mode])
 
-  const [showError , setShowError] = useState(false);
+  const [showError, setShowError] = useState(false);
   return (
     <div className={`FCC h-screen`} >
       {
@@ -208,22 +204,24 @@ const WeatherApp = () => {
               style={{ color: color1 }}
             />
           }
-          { showError &&
-            <BiErrorCircle 
+          {showError &&
+            <BiErrorCircle
               className="text-red-600 translate-x-[25px] text-lg"
             />
           }
-          <input
-            type="text"
-            value={isText}
-            id="city"
-            onChange={(e) => setIsText(e.target.value)}
-            placeholder="Search..."
-            autoFocus
-            style={{ background: color2, color: color1 }}
-            autoComplete="off"
-            className="font-serif TD rounded-2xl border-2 shadow-2xl shadow-[rgba(255,255,255,0.1)] border-transparent w-[100%] outline-none px-9 py-2"
-          />
+          <form onSubmit={getCityAndSearch}>
+            <input
+              type="text"
+              value={isText}
+              id="city"
+              onChange={(e) => setIsText(e.target.value)}
+              placeholder="Search..."
+              autoFocus
+              style={{ background: color2, color: color1 }}
+              autoComplete="off"
+              className="font-serif TD rounded-2xl border-2 shadow-2xl shadow-[rgba(255,255,255,0.1)] border-transparent w-[100%] outline-none px-9 py-2"
+            />
+          </form>
           <FaSearch onClick={getCityAndSearch} style={{ color: color1 }} className="cursor-pointer translate-x-[-30px] text-xl" />
         </div>
         <div>
