@@ -1,0 +1,90 @@
+.text1 {
+    letter-spacing: .1em;
+    color: black;
+    text-shadow: 0 0 10px rgb(217, 26, 163),
+        0 0 20px rgb(217, 26, 163),
+        0 0 50px rgb(217, 26, 163);
+}
+.text2 {
+    letter-spacing: .1em;
+    color: white;
+    text-shadow: 0 0 10px rgb(10, 202, 220),
+        0 0 20px rgb(10, 202, 220),
+        0 0 50px rgb(10, 202, 220);
+}
+
+.lightBar1 {
+    background-color: black;
+    animation: animateLightbar 5s linear infinite;
+    box-shadow: 0 0 10px rgb(217, 26, 163),
+        0 0 20px rgb(217, 26, 163),
+        0 0 50px rgb(217, 26, 163),
+        0 0 80px rgb(217, 26, 163);
+}
+.lightBar2 {
+    background-color: white;
+    animation: animateLightbar 5s linear infinite;
+    box-shadow: 0 0 10px rgb(10, 202, 220),
+        0 0 20px rgb(10, 202, 220),
+        0 0 50px rgb(10, 202, 220),
+        0 0 80px rgb(10, 202, 220);
+}
+
+@keyframes animateLightbar {
+    0% {
+        transform: scaleY(0) translateX(0);
+    }
+
+    10% {
+        transform: scaleY(1) translateX(0);
+    }
+
+    90% {
+        transform: scaleY(1) translateX(215px);
+    }
+
+    100% {
+        transform: scaleY(0) translateX(215px);
+    }
+
+}
+
+.topLayer1 {
+    background-color: white;
+    animation: animateTopLayer 10s linear infinite;
+}
+.topLayer2 {
+    background-color: black;
+    animation: animateTopLayer 10s linear infinite;
+}
+
+@keyframes animateTopLayer {
+    0% {
+        transform:translateX(0);
+    }
+
+    5% {
+        transform:translateX(0);
+    }
+
+    45% {
+        transform:translateX(100%);
+        
+    }
+
+    50% {
+        transform:translateX(100%);
+    }
+
+    50.0000001% {
+        transform:translateX(-100%);
+    }
+
+    55% {
+        transform:translateX(-100%);
+    }
+
+    95% {
+        transform:translateX(0px);
+    }
+}

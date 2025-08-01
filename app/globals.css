@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+.TD{
+    transition: all 500ms;
+}
+
+.FCC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.openMenuBack{
+    animation: openMenuAnimateBack 1s ease-in-out forwards ;
+}
+.openMenuFront{
+    animation: openMenuAnimateFront 2s ease-in-out forwards ;
+}
+@keyframes openMenuAnimateBack {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    90%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes openMenuAnimateFront {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.closeMenuBack{
+    animation: closeMenuAnimateBack 1100ms ease-in-out forwards ;
+}
+.closeMenuFront{
+    animation: closeMenuAnimateFront 500ms ease-in-out forwards ;
+}
+@keyframes closeMenuAnimateBack {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    90%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes closeMenuAnimateFront {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+.openSetting{
+    animation: openSettingAnimate 0.2s ease-in-out forwards ;
+}
+@keyframes openSettingAnimate {
+    0%{
+        transform: scale(0.7);
+        opacity: 0.7;
+    }
+    40%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    60%{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    80%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.closeSetting{
+    animation: closeSettingAnimate .3s ease-in-out backwards ;
+}
+@keyframes closeSettingAnimate {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.spinAnimate{
+    animation: animateSpin 3s infinite linear;
+}
+@keyframes animateSpin {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+.bounceAnimate{
+    animation: animateBounce 3s infinite linear;
+}
+@keyframes animateBounce {
+    0%{transform: scale(1);}
+    50%{transform: scale(1.2);}
+    100%{transform: scale(1);}
+}
+.goAnimate1{
+    animation: animateGo1 3s infinite linear;
+}
+@keyframes animateGo1 {
+    from{filter: drop-shadow(0 0 1px #0f0) drop-shadow(0 0 3px #0f0);}
+    to{filter: drop-shadow(0 0 10px #0f0) drop-shadow(0 0 50px #0f0)}
+}
+.goAnimate2{
+    animation: animateGo2 3s infinite linear;
+}
+@keyframes animateGo2 {
+    from{filter: drop-shadow(0 0 1px cyan) drop-shadow(0 0 3px cyan);}
+    to{filter: drop-shadow(0 0 10px cyan) drop-shadow(0 0 50px cyan)}
+}
+
+.DT{
+    transition: all 500ms;
+}
+
+.active{
+    background-color: #0f0;
+}
+.fade{
+    animation: fadeAnimate 500ms ease-in-out;
+}
+@keyframes fadeAnimate {
+    from{opacity: 0.2;}
+    to{opacity: 1;}
+}
