@@ -150,9 +150,9 @@ const WeatherApp = () => {
     search(city);
   }
 
-  // useEffect(() => {
-  //   search('Mazar-e-Sharif');
-  // }, [])
+  useEffect(() => {
+    search('Mazar-e-Sharif');
+  }, [])
 
 
   const [background, setBackground] = useState('13d.jpg')
